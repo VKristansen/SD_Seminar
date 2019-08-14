@@ -3,8 +3,7 @@ page 50102 "CSD Seminar List"
 //Chapter 5 - Lab 5-6
 //Create the Seminar List Page
 {
-    PageType = Card;
-    ApplicationArea = All;
+    PageType = List;
     UsageCategory = Lists;
     SourceTable = "CSD Seminar";
     Caption = 'Seminar List';
@@ -78,6 +77,4 @@ page 50102 "CSD Seminar List"
         }
     }
 
-    var
-        myInt: Integer;
 }
