@@ -1,9 +1,11 @@
 table 50101 "CSD Seminar"
 //CSD 1.00 9/8/2019
 //Chapter 5 Lab 2-2
+//Create the Seminar Table
 {
     Caption = 'Seminar';
-
+    LookupPageId = "CSD Seminar List";
+    DrillDownPageId = "CSD Seminar List";
     fields
     {
         field(10; "No."; Code[20])
