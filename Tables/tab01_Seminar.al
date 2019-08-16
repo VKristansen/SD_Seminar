@@ -4,8 +4,8 @@ table 50101 "CSD Seminar"
 //Create the Seminar Table
 {
     Caption = 'Seminar';
-    LookupPageId = "CSD Seminar List";
-    DrillDownPageId = "CSD Seminar List";
+    LookupPageId = "CSD Seminar List";//allows us to define what page is the default for looking up data in this table
+    DrillDownPageId = "CSD Seminar List";//allows us to define what page is the default for drilling down into the supporting detail for data that is summarized in this table
     fields
     {
         field(10; "No."; Code[20])
