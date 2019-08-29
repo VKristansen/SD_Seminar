@@ -1,5 +1,6 @@
 table 50104 "CSD Seminar Comment Line"
 //CSD 1.00 16/8/2019 Lab 5-3
+//Chapter 7 Lab 3-2
 //Create the Seminar Comment Line Table
 {
     Caption = 'Seminar Comment Line';
@@ -27,7 +28,10 @@ table 50104 "CSD Seminar Comment Line"
             TableRelation = if ("Table Name" = const (Seminar)) "CSD Seminar"
             else
             if ("Table Name" = const ("Seminar"))
-                                    "CSD Seminar Reg. Header";
+                                    "CSD Seminar Reg. Header"
+            else
+            if ("Table Name" = const ("Posted Seminar Reg. Header")) "CSD Posted Seminar Reg. Header";
+
         }
         field(40; "Line No."; Integer)
         {

@@ -70,7 +70,7 @@ table 50110 "CSD Seminar Reg. Header"
         }
         field(5; "Instructor Resource No."; Code[20])
         {
-            Caption = 'Instractor Resource No.';
+            Caption = 'Instructor Resource No.';
             TableRelation = Resource where (Type = const (Person));
 
             trigger OnValidate();
@@ -80,7 +80,7 @@ table 50110 "CSD Seminar Reg. Header"
         }
         field(6; "Instructor Name"; Text[50])
         {
-            Caption = 'Instractor Name';
+            Caption = 'Instructor Name';
             CalcFormula = Lookup (Resource.Name where ("No." = Field ("Instructor Resource No."),
                                                       Type = const (Person)));
             Editable = false;
