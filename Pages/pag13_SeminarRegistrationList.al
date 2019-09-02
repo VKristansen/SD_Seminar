@@ -35,6 +35,10 @@ page 50113 "CSD Seminar Registration List"
                 field(Duration; Duration)
                 {
                 }
+                field("Minimum Participants"; "Minimum Participants")
+                {
+                    //extra by me
+                }
                 field("Maximum Participants"; "Maximum Participants")
                 {
                 }

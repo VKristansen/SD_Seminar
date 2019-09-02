@@ -147,6 +147,26 @@ page 50110 "CSD Seminar Registration"
                 }
             }
         }
+        //>>Chapter 8 Lab 2-4
+        //add the navigate action
+        area(Processing)
+        {
+            action("&Navigate")
+            {
+                Caption = '&Navigate';
+                Image = Navigate;
+                Promoted = true;
+                PromotedCategory = Process;
+                trigger OnAction();
+                var
+                    Navigate: Page Navigate;
+                begin
+                    Navigate.SetDoc("Posting Date", "No.");
+                    Navigate.Run;
+                end;
+            }
+            //<<Chapter 8 Lab 2-4
+        }
     }
 }
 

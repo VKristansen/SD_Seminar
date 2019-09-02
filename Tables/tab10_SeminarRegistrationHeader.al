@@ -5,7 +5,11 @@ table 50110 "CSD Seminar Reg. Header"
     //     - Created new table
 
     Caption = 'Seminar Registration Header';
-
+    //>>Chapter 8 Lab 2-3
+    //add LookUpPageId & DrilldownPageId
+    LookupPageId = "CSD Posted Seminar Reg. List";
+    DrillDownPageId = "CSD Posted Seminar Reg. List";
+    //<<Chapter 8 Lab 2-3
     fields
     {
         field(1; "No."; Code[20])
@@ -353,6 +357,15 @@ table 50110 "CSD Seminar Reg. Header"
         end;
 
         InitRecord;
+
+        /*Create code in the Seminar Registration Header table
+        to apply the record link filter to the Seminar No. field.*/
+        //>> Lab 8 1-1
+        if GetFilter("Seminar No.") <> '' then
+            if GetRangeMin("Seminar No.") = GetRangeMax("Seminar No.")
+            then
+                Validate("Seminar No.", GetRangeMin("Seminar No."));
+        //<< Lab 8 1-1
     end;
 
     local procedure InitRecord()
