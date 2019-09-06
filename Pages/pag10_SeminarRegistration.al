@@ -58,13 +58,16 @@ page 50110 "CSD Seminar Registration"
                 {
                 }
             }
-            group("Seminar Room")
+            group("Lines")
             {
                 part(SeminarRegistrationLines; "CSD Seminar Reg. Subpage")
                 {
                     Caption = 'Lines';
                     SubPageLink = "Document No." = field ("No.");
                 }
+            }
+            group("Seminar Room")
+            {
                 field("Room Code"; "Room Resource No.")
                 {
                 }
@@ -145,6 +148,25 @@ page 50110 "CSD Seminar Registration"
                     RunObject = Page 50124;
                     RunPageLink = "Document No." = Field ("No.");
                 }
+                //>>Chapter 9 Lab 1-8
+                //Add a new Print action in the Seminar Registration group
+                //in the navigation area
+                action("&Print")
+                {
+                    Caption = '&Print';
+                    Image = Print;
+                    Promoted = true;
+                    PromotedIsBig = true;
+                    PromotedCategory = Process;
+                    trigger OnAction();
+                    var
+                        SeminarReportSelection: Record "CSD Seminar Report Selections";
+                    begin
+                        SeminarReportSelection.PrintReportSelection(SeminarReportSelection.Usage::Registration, Rec);
+                    end;
+
+                }
+                //<<Chapter 9 Lab 1-8
             }
         }
         //>>Chapter 8 Lab 2-4

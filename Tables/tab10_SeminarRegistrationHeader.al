@@ -291,7 +291,14 @@ table 50110 "CSD Seminar Reg. Header"
         {
             Caption = 'Posting No.';
         }
-
+        //>>Chapter 9 Lab 1-1
+        //add No. Printed field
+        field(40; "No. Printed"; Integer)//it must to be 40 to work
+        {
+            Caption = 'No. Printed';
+            Editable = false;
+        }
+        //<<Chapter 9 Lab 1-1
     }
 
     keys

@@ -35,10 +35,6 @@ page 50113 "CSD Seminar Registration List"
                 field(Duration; Duration)
                 {
                 }
-                field("Minimum Participants"; "Minimum Participants")
-                {
-                    //extra by me
-                }
                 field("Maximum Participants"; "Maximum Participants")
                 {
                 }
@@ -90,6 +86,25 @@ page 50113 "CSD Seminar Registration List"
                     ShortcutKey = F9;
                     RunObject = codeunit "CSD Seminar-Post (Yes/No)";
                 }
+                //>>Chapter 9 Lab 1-8
+                //Add a new Print action in the Seminar Registration group
+                //in the navigation area
+                action("&Print")
+                {
+                    Caption = '&Print';
+                    Image = Print;
+                    Promoted = true;
+                    PromotedIsBig = true;
+                    PromotedCategory = Process;
+                    trigger OnAction();
+                    var
+                        SeminarReportSelection: Record "CSD Seminar Report Selections";
+                    begin
+                        SeminarReportSelection.PrintReportSelection(SeminarReportSelection.Usage::Registration, Rec);
+                    end;
+
+                }
+                //<<Chapter 9 Lab 1-8
             }
         }
     }

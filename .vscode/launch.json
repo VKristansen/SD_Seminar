@@ -12,7 +12,7 @@
             "startupObjectType": "Page",
             "breakOnError": true,
             "launchBrowser": true,
-            "schemaUpdateMode": "Recreate"
+            "schemaUpdateMode": "Synchronize"//on production the ForceSync must be not be used
         }
     ]
 }
